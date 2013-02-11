@@ -21,6 +21,8 @@ module LearnSprout
       #TODO handle non-page URL?
       if data['data']
         data['data'].each do |item|
+          item["client"] = extras[:client]
+          item["org_id"] = extras[:org_id]
           @items << type.new(item.merge(extras))
         end
       end

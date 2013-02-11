@@ -9,7 +9,8 @@ module LearnSprout
                   :teacher_id,
                   :school_id,
                   :course_id,
-                  :student_ids
+                  :student_ids,
+                  :extras
 
     def initialize(attrs={})
       @client = attrs["client"]
@@ -24,6 +25,7 @@ module LearnSprout
       @time_updated = attrs["time_updated"]
       @updated_at = Time.at(@time_updated) if @time_updated
       @student_ids = []
+      @extras = attrs["extras"]
       if attrs["students"]
         attrs["students"].each do |student|
           if student.is_a?(Hash)

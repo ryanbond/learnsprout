@@ -43,6 +43,7 @@ module LearnSprout
       else
         url = "org/#{org_id}/student?apikey=#{@api_key}"
       end
+      url += "&since=#{options[:since]}" if options[:since]
       Page.new(url, Student, :org_id => org_id, :client => self)
     end
 
@@ -61,6 +62,7 @@ module LearnSprout
       else
         url = "org/#{org_id}/section?apikey=#{@api_key}"
       end
+      url += "&since=#{options[:since]}" if options[:since]
       Page.new(url, Section, :org_id => org_id, :client => self)
     end
 
@@ -79,6 +81,7 @@ module LearnSprout
       else
         url = "org/#{org_id}/teacher?apikey=#{@api_key}"
       end
+      url += "&since=#{options[:since]}" if options[:since]
       Page.new(url, Teacher, :org_id => org_id, :client => self)
     end
 
@@ -97,6 +100,7 @@ module LearnSprout
       else
         url = "org/#{org_id}/term?apikey=#{@api_key}"
       end
+      url += "&since=#{options[:since]}" if options[:since]
       Page.new(url, Term, :org_id => org_id, :client => self)
     end
 
@@ -123,6 +127,7 @@ module LearnSprout
       else
         url = "org/#{org_id}/course?apikey=#{@api_key}"
       end
+      url += "&since=#{options[:since]}" if options[:since]
       Page.new(url, Course, :org_id => org_id, :client => self)
     end
 
